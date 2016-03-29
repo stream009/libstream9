@@ -125,6 +125,13 @@ template<typename T, template<typename...> class Template>
 using is_specialization_of =
             detail::is_specialization_of<std14::decay_t<T>, Template>;
 
+// is_iterator<It, ItratorCategory>
+template<typename It, typename Category = std::input_iterator_tag>
+using is_iterator =
+    std::is_base_of<
+        Category,
+        typename std::iterator_traits<It>::iterator_category>;
+
 } // namespace stream9
 
 #endif // STREAM9_TYPE_TRAITS_HPP
