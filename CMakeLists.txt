@@ -22,3 +22,8 @@ endif(BUILD_TESTING)
 if(BUILD_EXAMPLE)
     add_subdirectory(example)
 endif(BUILD_EXAMPLE)
+
+install(DIRECTORY "include/stream9"
+    DESTINATION "include"
+)
+

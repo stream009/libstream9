@@ -25,3 +25,6 @@ include_directories("${INCLUDE_PATH}/mixin")
 
 add_library(stream9_qt STATIC ${SRCS})
 target_link_libraries(stream9_qt Qt5::Widgets)
+install(TARGETS stream9_qt
+    ARCHIVE DESTINATION lib
+)
