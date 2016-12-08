@@ -14,7 +14,7 @@ namespace stream9 { namespace qt { namespace mixin {
 inline void
 setAction(QMimeData &data, const QAction &action)
 {
-    const auto &bytes = QByteArray::number(reinterpret_cast<size_t>(&action));
+    const auto &bytes = QByteArray::number(reinterpret_cast<qulonglong>(&action));
     data.setData("application/x-action-id", bytes);
 }
 
