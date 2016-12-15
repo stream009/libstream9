@@ -44,7 +44,6 @@ protected:
     // @override QWidget
     void actionEvent(QActionEvent*) override;
 
-private:
     // @override menu_view::Slots
     void onTriggered(QAction&) override;
     void onHovered(QAction&) override;
