@@ -94,7 +94,7 @@ private:
 
 }}} // namespace stream9::qt::mixin
 
-Q_DECLARE_METATYPE(QPersistentModelIndex);
+Q_DECLARE_METATYPE(QPersistentModelIndex)
 
 #include "action_view.tcc"
 

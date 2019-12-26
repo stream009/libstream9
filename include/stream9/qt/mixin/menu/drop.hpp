@@ -151,7 +151,7 @@ paintDropMarker(QPaintEvent &)
     auto* action = dropTarget(pos); // nullptr == append to last
 
     QPainter p { this };
-    p.setPen(this->palette().foreground().color());
+    p.setPen(this->palette().windowText().color());
 
     if (action) { // insert
         const auto &rect = this->actionGeometry(action);
