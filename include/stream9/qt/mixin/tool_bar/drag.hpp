@@ -56,6 +56,7 @@ private:
 #include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QWidget>
 #endif
+#include <QMenu>
 
 namespace stream9 { namespace qt { namespace mixin { namespace tool_bar {
 
@@ -132,6 +133,11 @@ startDrag(const QPoint &pos)
 
     m_draggingAction = std::make_pair(action, next);
 
+    auto* menu = action->menu();
+    if (menu) {
+        menu->close();
+    }
+
     this->removeAction(action);
 }
 
@@ -163,6 +169,11 @@ actionEvent(QActionEvent* const event)
 
     auto* const action = event->action();
     assert(action);
+
+    if (action->menu()) {
+        action->menu()->installEventFilter(&m_mouseEventCapturer);
+    }
+
     auto* const widget = this->widgetForAction(action);
     assert(widget);
 

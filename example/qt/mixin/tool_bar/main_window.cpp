@@ -17,6 +17,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QToolButton>
 #endif
 
 #include <stream9/qt/mixin/menu/drag.hpp>
@@ -90,6 +91,8 @@ createDragNDropToolBar()
         menu->addAction(action);
     }
     toolBar2->insertAction(toolBar2->actions().front(), menu->menuAction());
+    auto* button = dynamic_cast<QToolButton*>(toolBar2->widgetForAction(menu->menuAction()));
+    button->setPopupMode(QToolButton::InstantPopup);
 
     this->addToolBarBreak();
 }

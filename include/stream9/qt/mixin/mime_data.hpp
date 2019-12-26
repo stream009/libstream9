@@ -22,7 +22,7 @@ inline QAction *
 getAction(const QMimeData &data)
 {
     const auto &bytes = data.data("application/x-action-id");
-    auto* const action = reinterpret_cast<QAction*>(bytes.toUInt());
+    auto* const action = reinterpret_cast<QAction*>(bytes.toULongLong());
 
     return action;
 }
